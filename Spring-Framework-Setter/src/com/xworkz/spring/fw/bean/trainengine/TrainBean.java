@@ -5,6 +5,7 @@ public class TrainBean {
 	private String name;
 	private String color;
 	private int platFormNo;
+	
 	private EngineBean engineBean;
 
 	public TrainBean() {

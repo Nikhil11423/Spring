@@ -25,61 +25,62 @@ public class SpringBoot {
 
 	public static void main(String[] args) {
 
-		ApplicationContext context = new ClassPathXmlApplicationContext("resources\\spring.xml");
+		String str="resources\\spring.xml";
+		ApplicationContext context = new ClassPathXmlApplicationContext(str);
 
-		System.err.println("===================1] Train has-a Engine==================");
+		System.err.println("*****************Train has-a Engine using Const*********************");
 		TrainBean train = context.getBean(TrainBean.class);
 		System.out.println(train);
 		train.ticketIssue();
 		
-		System.err.println("===================2] Bottle has-a Cap==================");
+		System.err.println("*****************Bottle has-a Cap  using Const**********************");
 		BottleBean bottle = context.getBean(BottleBean.class);
 		System.out.println(bottle);
 
-		System.err.println("===================3] System has-a Power==================");
+		System.err.println("*****************System has-a Power  using Const********************");
 		SystemBean system = context.getBean(SystemBean.class);
 		System.out.println(system);
 
-		System.err.println("===================4] TV has-a Stand==================");
+		System.err.println("*****************TV has-a Stand  using Const************************");
 		System.out.println(context.getBean(TvBean.class));
 
-		System.err.println("===================5] Apartment has-a Lift==================");
+		System.err.println("*****************Apartment has-a Lift  using Const******************");
 		System.out.println(context.getBean(ApartmentBean.class));
 
-		System.err.println("===================6] Shirt has-a Button==================");
+		System.err.println("*****************Shirt has-a Button  using Const*******************");
 		System.out.println(context.getBean(ShirtBean.class));
 
-		System.err.println("===================7] Browser has-a Parser==================");
+		System.err.println("*****************Browser has-a Parser  using Const*****************");
 		System.out.println(context.getBean(BrowserBean.class));
 
-		System.err.println("===================8] River has-a Fish==================");
+		System.err.println("*****************River has-a Fish  using Const*********************");
 		System.out.println(context.getBean(RiverBean.class));
 
-		System.err.println("===================9] Body has-a Blood using setter==================");
+		System.err.println("*****************Body has-a Blood using setter*********************");
 		System.out.println(context.getBean(BodyBean.class));
 
-		System.err.println("===================10] Frame has-a Photo using setter==================");
+		System.err.println("*****************Frame has-a Photo using setter********************");
 		System.out.println(context.getBean(FrameBean.class));
 
-		System.err.println("===================11] Man has-a Slipper using setter==================");
+		System.err.println("*****************Man has-a Slipper using setter*******************");
 		System.out.println(context.getBean(ManBean.class));
 
-		System.err.println("===================12] SolarSystemBean has-a PlanetsBean using setter==================");
+		System.err.println("*****************SolarSystemBean has-a PlanetsBean using setter*****************");
 		System.out.println(context.getBean(SolarSystemBean.class));
 
-		System.err.println("===================13] Diamond has-a Carbon using setter==================");
+		System.err.println("*****************Diamond has-a Carbon using setter*****************");
 		System.out.println(context.getBean(DiamondBean.class));
 
-		System.err.println("===================14] Fish has-a Tail using setter==================");
+		System.err.println("*****************Fish has-a Tail using setter**********************");
 		System.out.println(context.getBean(FishesBean.class));
 
-		System.err.println("===================15] PCB has-a Component using setter==================");
+		System.err.println("*****************PCB has-a Component using setter******************");
 		System.out.println(context.getBean(PCBBean.class));
 
-		System.err.println("===================16] CPU has-a MotherBoard using setter==================");
+		System.err.println("*****************CPU has-a MotherBoard using setter*****************");
 		System.out.println(context.getBean(CPUBean.class));
 
-		System.err.println("===================17] Package has-a Class using setter==================");
+		System.err.println("*****************Package has-a Class using setter*******************");
 		System.out.println(context.getBean(PackageBean.class));
 	}
 

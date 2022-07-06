@@ -6,30 +6,30 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<!-- *************************************1] Train has-a Engine using constructor******************************** -->
+	<!-- *************************************Train has-a Engine using constructor******************************** -->
 	<bean class="com.xworkz.spring.fw.bean.trainengine.EngineBean" id="bean">
 		<constructor-arg value="diesel engine" />
 	</bean>
 
 	<bean class="com.xworkz.spring.fw.bean.trainengine.TrainBean">
-		<constructor-arg value="chennai express" />
-		<constructor-arg value="gray" />
-		<property name="platFormNo" value="7" />
+		<constructor-arg value="Belagavi  Super Past" />
+		<constructor-arg value="Red" />
+		<property name="platFormNo" value="8" />
 		<constructor-arg ref="bean" />
 	</bean>
 
 
 
-	<!-- ***************************************2] Bottle has-a Cap using constructor******************************* -->
+	<!-- ***************************************Bottle has-a Cap using constructor******************************* -->
 	<bean class="com.xworkz.spring.fw.bean.bottlecap.CapBean" id="capBean">
-		<constructor-arg value="Blue" />
+		<constructor-arg value="green" />
 		<constructor-arg value="Plastic" />
 	</bean>
 
 	<bean class="com.xworkz.spring.fw.bean.bottlecap.BottleBean">
 		<constructor-arg value="Sprit" />
 		<constructor-arg value="Green" />
-		<constructor-arg value="2" />
+		<constructor-arg value="4" />
 		<constructor-arg ref="capBean" />
 	</bean>
 
@@ -51,21 +51,21 @@
 	</bean>
 
 	<bean class="com.xworkz.spring.fw.bean.tvstand.TvBean">
-		<constructor-arg value="Sony" />
-		<constructor-arg value="45000d" />
+		<constructor-arg value="Acer" />
+		<constructor-arg value="35000d" />
 		<constructor-arg ref="standBean" />
 	</bean>
 
 
 	<!-- *********************************5] Apartment has-a Lift using constructor********************************* -->
 	<bean class="com.xworkz.spring.fw.bean.apartmentlift.LiftBean" id="liftBean">
-		<constructor-arg value="Hitachi" />
-		<constructor-arg value="640" />
+		<constructor-arg value="NB" />
+		<constructor-arg value="550" />
 	</bean>
 
 	<bean
 		class="com.xworkz.spring.fw.bean.apartmentlift.ApartmentBean">
-		<constructor-arg value="Diamond district apartment" />
+		<constructor-arg value="Golden  apartment" />
 		<constructor-arg value="60" />
 		<constructor-arg ref="liftBean" />
 	</bean>
@@ -80,7 +80,7 @@
 	<bean class="com.xworkz.spring.fw.bean.shirtbutton.ShirtBean">
 		<constructor-arg value="T-Shirt" />
 		<constructor-arg value="450d" />
-		<constructor-arg value="Blue" />
+		<constructor-arg value="yellow" />
 		<constructor-arg ref="buttonBean" />
 	</bean>
 
@@ -111,24 +111,24 @@
 
 	<!-- *********************************9] Body has-a Blood using setter ********************************* -->
 	<bean class="com.xworkz.spring.fw.bean.bodyblood.BloodBean" id="bloodBean">
-		<property name="bloodGroup" value="A-positve" />
+		<property name="bloodGroup" value="B-positve" />
 	</bean>
 
 	<bean class="com.xworkz.spring.fw.bean.bodyblood.BodyBean">
 		<property name="bodyColor" value="Godhi banna" />
-		<property name="weight" value="82d" />
+		<property name="weight" value="72d" />
 		<property name="bloodBean" ref="bloodBean" />
 	</bean>
 	
 	
 	<!-- *********************************10] Frame has-a Photo using setter ********************************* -->
 	<bean class="com.xworkz.spring.fw.bean.framephoto.PhotoBean" id="photoBean">
-	<property name="sizeofPhoto" value="20X24"/>
+	<property name="sizeofPhoto" value="24X36"/>
 	<property name="numberOfPhoto" value="4562"/>
 	</bean>
 	
 	<bean class="com.xworkz.spring.fw.bean.framephoto.FrameBean">
-	<property name="typeOfMeterial" value="Titanium frames"/>
+	<property name="typeOfMeterial" value="Mating frames"/>
 	<property name="price" value="1499"/>
 	<property name="photoBean" ref="photoBean"/>
 	</bean>
@@ -136,16 +136,16 @@
 	
 	<!-- *********************************11] Frame has-a Photo using setter ********************************* -->
 	<bean class="com.xworkz.spring.fw.bean.manslipper.SlipperBean" id="slipperBean">
-	<property name="companyName" value="puma"/>
-	<property name="color" value="Blue"/>
-	<property name="price" value="1399"/>
-	<property name="size" value="9"/>
+	<property name="companyName" value="adidas"/>
+	<property name="color" value="White"/>
+	<property name="price" value="1999"/>
+	<property name="size" value="10"/>
 	</bean>
 	
 	<bean class="com.xworkz.spring.fw.bean.manslipper.ManBean">
-	<property name="name" value="Ram"/>
+	<property name="name" value="Nikhil"/>
 	<property name="gender" value="M"/>
-	<property name="age" value="25"/>
+	<property name="age" value="27"/>
 	<property name="slipperBean" ref="slipperBean"/>
 	</bean>
 	
