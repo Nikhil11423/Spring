@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- *************************************Train has-a Engine using constructor******************************** -->
+	<bean class="com.xworkz.spring.fw.bean.trainengine.EngineBean" id="bean">
+		<constructor-arg value="diesel engine" />
+	</bean>
+
+	<bean class="com.xworkz.spring.fw.bean.trainengine.TrainBean">
+		<constructor-arg value="Belagavi  Super Past" />
+		<constructor-arg value="Red" />
+		<property name="platFormNo" value="8" />
+		<constructor-arg ref="bean" />
+	</bean>
+
+
+
+	<!-- ***************************************Bottle has-a Cap using constructor******************************* -->
+	<bean class="com.xworkz.spring.fw.bean.bottlecap.CapBean" id="capBean">
+		<constructor-arg value="green" />
+		<constructor-arg value="Plastic" />
+	</bean>
+
+	<bean class="com.xworkz.spring.fw.bean.bottlecap.BottleBean">
+		<constructor-arg value="Sprit" />
+		<constructor-arg value="Green" />
+		<constructor-arg value="4" />
+		<constructor-arg ref="capBean" />
+	</bean>
+
+	<!-- *********************************3] Systen has-a Power using constructor********************************* -->
+	<bean class="com.xworkz.spring.fw.bean.systempower.PowerBean" id="powerBean">
+		<constructor-arg value="DC" />
+	</bean>
+
+	<bean class="com.xworkz.spring.fw.bean.systempower.SystemBean">
+		<constructor-arg value=" service system" />
+		<constructor-arg ref="powerBean" />
+	</bean>
+
+
+	<!-- *********************************4] TV has-a Stand using constructor********************************* -->
+	<bean class="com.xworkz.spring.fw.bean.tvstand.StandBean" id="standBean">
+		<constructor-arg value="Steel" />
+		<constructor-arg value="Black" />
+	</bean>
+
+	<bean class="com.xworkz.spring.fw.bean.tvstand.TvBean">
+		<constructor-arg value="Acer" />
+		<constructor-arg value="35000d" />
+		<constructor-arg ref="standBean" />
+	</bean>
+
+
+	<!-- *********************************5] Apartment has-a Lift using constructor********************************* -->
+	<bean class="com.xworkz.spring.fw.bean.apartmentlift.LiftBean" id="liftBean">
+		<constructor-arg value="NB" />
+		<constructor-arg value="550" />
+	</bean>
+
+	<bean
+		class="com.xworkz.spring.fw.bean.apartmentlift.ApartmentBean">
+		<constructor-arg value="Golden  apartment" />
+		<constructor-arg value="60" />
+		<constructor-arg ref="liftBean" />
+	</bean>
+
+
+	<!-- *********************************6] Shirt has-a Button using constructor ********************************* -->
+	<bean class="com.xworkz.spring.fw.bean.shirtbutton.ButtonBean" id="buttonBean">
+		<constructor-arg value="Round" />
+		<constructor-arg value="Black" />
+	</bean>
+
+	<bean class="com.xworkz.spring.fw.bean.shirtbutton.ShirtBean">
+		<constructor-arg value="T-Shirt" />
+		<constructor-arg value="450d" />
+		<constructor-arg value="yellow" />
+		<constructor-arg ref="buttonBean" />
+	</bean>
+
+
+	<!-- *********************************7] Browser has-a Parser using constructor********************************* -->
+	<bean class="com.xworkz.spring.fw.bean.browserparser.ParserBean" id="parserBean">
+		<constructor-arg value="Top-Bottom Parser" />
+	</bean>
+
+	<bean class="com.xworkz.spring.fw.bean.browserparser.BrowserBean">
+		<constructor-arg value="Google Chrome" />
+		<constructor-arg ref="parserBean" />
+	</bean>
+
+
+	<!-- *********************************8] Browser has-a Parser using constructor ********************************* -->
+	<bean class="com.xworkz.spring.fw.bean.riverfish.FishBean" id="fishBean">
+		<constructor-arg value="Mackerel fish" />
+		<constructor-arg value="150d" />
+	</bean>
+
+	<bean class="com.xworkz.spring.fw.bean.riverfish.RiverBean">
+		<constructor-arg value="Cauvery" />
+		<constructor-arg value="Karnataka" />
+		<constructor-arg ref="fishBean" />
+	</bean>
+
+
+	<!-- *********************************9] Body has-a Blood using setter ********************************* -->
+	<bean class="com.xworkz.spring.fw.bean.bodyblood.BloodBean" id="bloodBean">
+		<property name="bloodGroup" value="B-positve" />
+	</bean>
+
+	<bean class="com.xworkz.spring.fw.bean.bodyblood.BodyBean">
+		<property name="bodyColor" value="Godhi banna" />
+		<property name="weight" value="72d" />
+		<property name="bloodBean" ref="bloodBean" />
+	</bean>
+	
+	
+	<!-- *********************************10] Frame has-a Photo using setter ********************************* -->
+	<bean class="com.xworkz.spring.fw.bean.framephoto.PhotoBean" id="photoBean">
+	<property name="sizeofPhoto" value="24X36"/>
+	<property name="numberOfPhoto" value="4562"/>
+	</bean>
+	
+	<bean class="com.xworkz.spring.fw.bean.framephoto.FrameBean">
+	<property name="typeOfMeterial" value="Mating frames"/>
+	<property name="price" value="1499"/>
+	<property name="photoBean" ref="photoBean"/>
+	</bean>
+	
+	
+	<!-- *********************************11] Frame has-a Photo using setter ********************************* -->
+	<bean class="com.xworkz.spring.fw.bean.manslipper.SlipperBean" id="slipperBean">
+	<property name="companyName" value="adidas"/>
+	<property name="color" value="White"/>
+	<property name="price" value="1999"/>
+	<property name="size" value="10"/>
+	</bean>
+	
+	<bean class="com.xworkz.spring.fw.bean.manslipper.ManBean">
+	<property name="name" value="Nikhil"/>
+	<property name="gender" value="M"/>
+	<property name="age" value="27"/>
+	<property name="slipperBean" ref="slipperBean"/>
+	</bean>
+	
+	
+	<!-- *********************************12] SolarSystemBean has-a PlanetsBean using setter ********************************* -->
+	<bean class="com.xworkz.spring.fw.bean.solarsystemplanets.PlanetsBean" id="planetsBean">
+	<property name="name" value="Earth"/>
+	<property name="temperature" value="13.9 degrees Celsius"/>
+	</bean>
+	
+	<bean class="com.xworkz.spring.fw.bean.solarsystemplanets.SolarSystemBean">
+	<property name="totalPlanets" value="8"/>
+	<property name="nearestStar" value="Proxima Centauri"/>
+	<property name="planetsBean" ref="planetsBean"></property>
+	</bean>
+
+
+	<!-- *********************************13] Diamond has-a Carbon using setter ********************************* -->
+	<bean class="com.xworkz.spring.fw.bean.diamondcarbon.CarbonBean" id="carbonBean">
+	<property name="typeOfCarbon" value="Graphite"/>
+	<property name="density" value="2.09–2.23 g/cm3"/>
+	</bean>
+	
+	<bean class="com.xworkz.spring.fw.bean.diamondcarbon.DiamondBean">
+	<property name="structure" value="giant covalent structure"/>
+	<property name="madeOf" value="carbon"/>
+	<property name="carbonBean" ref="carbonBean"/>
+	</bean>
+	
+	
+	<!-- *********************************14] Fish has-a Tail using setter ********************************* -->
+	<bean class="com.xworkz.spring.fw.bean.fishtail.TailBean" id="tailBean">
+	<property name="totalTailShapes" value="6"/>
+	<property name="tailName" value="squash tail"/>
+	</bean>
+	
+	<bean class="com.xworkz.spring.fw.bean.fishtail.FishesBean">
+	<property name="fishName" value="Siamese fighting fish"/>
+	<property name="typeOfWater" value="freshwater fish"/>
+	<property name="tailBean" ref="tailBean"/>
+	</bean>
+	
+	
+	<!-- *********************************15] PCB has-a Component using setter ********************************* -->
+	<bean class="com.xworkz.spring.fw.bean.pcbcomponent.ComponentBean" id="componentBean">
+	<property name="componentName" value="resistor"/>
+	<property name="componentSymbol" value="“R” or Ω"/>
+	</bean>
+	
+	<bean class="com.xworkz.spring.fw.bean.pcbcomponent.PCBBean">
+	<property name="typeOfPCB" value="Multi-Layer PCB"/>
+	<property name="componentBean" ref="componentBean"/>
+	</bean>
+	
+	
+	<!-- *********************************16] CPU has-a MotherBoard using setter ********************************* -->
+	<bean class="com.xworkz.spring.fw.bean.cpumotherboard.MotherBoardBean" id="motherBoardBean">
+	<property name="name" value="Intel"/>
+	<property name="processorType" value="i5-3250"/>
+	<property name="noOfRamSlots" value="2"/>
+	</bean>
+	
+	<bean class="com.xworkz.spring.fw.bean.cpumotherboard.CPUBean">
+	<property name="modelNo" value="GT-16GB-1TB-H61-i5"/>
+	<property name="powerSupply" value="550 W"/>
+	<property name="internalPort" value="4 x SATA 6Gb/s"/>
+	<property name="motherBoardBean" ref="motherBoardBean"/>
+	</bean>
+	
+	
+	<!-- *********************************17] Package has-a Class using setter ********************************* -->
+	<bean class="com.xworkz.spring.fw.bean.packageclass.ClassBean" id="classBean">
+	<property name="className" value="String"/>
+	<property name="totalMethods" value="60"/>
+	</bean>
+	
+	<bean class="com.xworkz.spring.fw.bean.packageclass.PackageBean">
+	<property name="packageName" value="java.lang.String"/>
+	<property name="classBean" ref="classBean"/>
+	</bean>
+	
+	
+	
+</beans>

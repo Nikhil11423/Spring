@@ -1,3 +1,4 @@
+package com.xworkz.spring.fw.bean.diamondcarbon;
 import java.awt.SystemColor;
 
 import org.springframework.context.ApplicationContext;
@@ -8,7 +9,6 @@ import com.xworkz.spring.fw.bean.bodyblood.BodyBean;
 import com.xworkz.spring.fw.bean.bottlecap.BottleBean;
 import com.xworkz.spring.fw.bean.browserparser.BrowserBean;
 import com.xworkz.spring.fw.bean.cpumotherboard.CPUBean;
-import com.xworkz.spring.fw.bean.diamondcarbon.DiamondBean;
 import com.xworkz.spring.fw.bean.fishtail.FishesBean;
 import com.xworkz.spring.fw.bean.framephoto.FrameBean;
 import com.xworkz.spring.fw.bean.manslipper.ManBean;
