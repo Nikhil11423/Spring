@@ -18,18 +18,24 @@ public class FlightBookingRunner {
 		
 		
 		ApplicationContext container =new AnnotationConfigApplicationContext(SpringConfiguration.class);
-		FlightBookingServiceImpl serv=container.getBean(FlightBookingServiceImpl.class);
-		System.out.println(serv);
+		FlightBookingServiceImpl  service=container.getBean(FlightBookingServiceImpl.class);
+		//System.out.println(serv);
 		
 		FlightBookingDAO dao =container.getBean (FlightBookingDAOImpl.class);
 		
-		FlightBookingService service=container.getBean( FlightBookingService.class);
+		//FlightBookingService service=container.getBean( FlightBookingService.class);
 		
-		FlightBookingDTO dto=new FlightBookingDTO(01,"Nikhil",true,"@pass123","Air India","Delhi","USA", 45000d,LocalDateTime.of(2022, 8, 15, 12, 10), 18, 46800);
-        System.out.println(dto);
-	
+		FlightBookingDTO dto=new FlightBookingDTO(0,"Suraj",false,"$Pass010","Star Airline","Belagavi","Bangalore", 900d,LocalDateTime.of(2022, 8, 25, 03, 45), 29,1500);
+        System.out.println(dto);  
 
-	     dao.save(dto);
+	    service.validateAndSave(dto);
+	    
+	    dao.save(dto);
+	    
+      
+
+       
+	
 	}
 }
 

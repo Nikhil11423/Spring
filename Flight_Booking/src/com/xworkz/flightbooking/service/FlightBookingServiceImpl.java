@@ -24,17 +24,17 @@ public class FlightBookingServiceImpl implements FlightBookingService {
 		
 	
 		if (dto != null) {
-			//int id = dto.getId();
+			int id = dto.getId();
 			String passengerName  = dto.getPassengerName();
-			//boolean international = dto.isInternational();
+			boolean international = dto.isInternational();
 			String	passportNo	= dto.getPassportNo();
 			String	airline	= dto.getAirline();
 			String	boarding = dto.getBoarding();
 			String	destination = dto.getDestination();
 			double	ticketPrice = dto.getTicketPrice();
-			//LocalDateTime travelDateAndTime = dto.getTravelDateAndTime();
-			//double	gstPercentage = dto.getGstPercentage();
-			double	totalPrice = dto.getTotalPrice();
+			LocalDateTime travelDateAndTime = dto.getTravelDateAndTime();
+			double	gstPercentage = dto.getGstPercentage();
+			//double	totalPrice = dto.getTotalPrice();
 		
 			if (passengerName != null && !passengerName.matches(".*[0-9,!@#$%^&*()_+{}><.;,<>].*") && passengerName.length() >= 3
 					&& passengerName.length() < 40) {
@@ -43,7 +43,7 @@ public class FlightBookingServiceImpl implements FlightBookingService {
 				System.out.println("passengerName is invalid");
 
 			}
-			if (passportNo != null && !passportNo.matches(".*[0-9,!@#$%^&*()_+{}><.;,<>].*") && passportNo.length() >= 3
+			if (passportNo != null && !passportNo.matches(".*[0-9,!@#$%^&*()_+{}><.;,<>].*") && passportNo.length() >= 8
 					&& passportNo.length() < 40) {
 				System.out.println("passportNo is valid");
 			} else {
@@ -71,23 +71,28 @@ public class FlightBookingServiceImpl implements FlightBookingService {
 				System.out.println("destination is invalid");
 
 			}
-			if (ticketPrice > 0 &&ticketPrice < 1000) {
+			if (ticketPrice > 0 && ticketPrice < 2500) {
 				System.out.println("ticketPrice is valid");
 			} else {
 				System.out.println("ticketPrice is invalid");
 			}
-			if (totalPrice > 0 && totalPrice < 2500) {
-				System.out.println("totalPrice is valid");
+			if (international == true) {
+				dto.setGstPercentage(25.0);
+				System.out.println("Its International");
 			} else {
-				System.out.println("totalPrice is invalid");
+				dto.setGstPercentage(12.0);
+				System.out.println("Its Domestic");
 			}
-			
 
+			double totalPrice = dto.getTotalPrice();
+			totalPrice = ticketPrice + ((gstPercentage / 100) * ticketPrice);
+			dto.setTotalPrice(totalPrice);
 		}
 
 		return dao.save(dto);
 		//boolean saved= this.dao.save(dto);
 
 	}
-	
+
+			
 }
