@@ -5,6 +5,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import com.xworkz.recharge.configuration.SpringConfiguration;
 import com.xworkz.recharge.dto.RechargeDTO;
+import com.xworkz.recharge.excepetion.InvalidDataException;
 import com.xworkz.recharge.service.RechargeService;
 
 public class RechargeBoot {
@@ -42,10 +43,17 @@ public class RechargeBoot {
 		//RechargeDTO dto=new RechargeDTO(0, "LPG", 15, 1000d, "LPG56", 45, true);
 		//RechargeDTO dto=new RechargeDTO(0, "Mobikwik", 40, 50d, "KWIK20", 5, true);
 		//RechargeDTO dto=new RechargeDTO(0, "Amazon", 300d, 1500d, "MYNZSK", 15, true);
-		RechargeDTO dto=new RechargeDTO(0, "Baklava Box", 250d,900d,"TXKHDV", 30, false);
+		RechargeDTO dto=new RechargeDTO(0, "Baklava Box", 250d,900d,"TXKHDV", 30, true);
 
-		System.out.println(dto);
-		service.validateAndSave(dto);
+		
+		
+		try {
+			boolean save = service.validateAndSave(dto);
+			System.out.println(save);
+		} catch (InvalidDataException e) {
+
+			e.printStackTrace();
+		}
 	
 
 	}

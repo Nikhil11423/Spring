@@ -5,10 +5,11 @@ import java.time.LocalDate;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import com.xworkz.armydetail.excepetion.InvalidDataException;
 import com.xworkz.armydetails.configuration.SpringConfiguration;
 import com.xworkz.armydetails.dao.ArmyDetailsDAO;
 import com.xworkz.armydetails.dto.ArmyDetailsDTO;
-import com.xworkz.armydetails.service.ArmyDetailsServiceImpl;
+import com.xworkz.armydetails.service.ArmyDetailsService;
 
 public class ArmyDetailsBoot {
 
@@ -16,7 +17,7 @@ public class ArmyDetailsBoot {
 		
 		
 		ApplicationContext container = new AnnotationConfigApplicationContext(SpringConfiguration.class);
-		ArmyDetailsServiceImpl impl=container.getBean(ArmyDetailsServiceImpl.class);
+		ArmyDetailsService service= container.getBean(ArmyDetailsService.class);
 		
 		ArmyDetailsDAO dao=container.getBean(ArmyDetailsDAO.class);
 		
@@ -32,14 +33,14 @@ public class ArmyDetailsBoot {
 
 
       
-      
-      
-      
-      System.out.println(dto);
-      impl.validateAndSave(dto);
-      
-      
+
+      try {
+			boolean save = service.validateAndSave(dto);
+			System.out.println(save);
+		} catch (InvalidDataException e) {
+			e.printStackTrace();
+		}
       
 	}
-
 }
+

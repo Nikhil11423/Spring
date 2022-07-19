@@ -9,6 +9,7 @@ import com.xworkz.metro.configuration.SpringConfiguration;
 import com.xworkz.metro.dao.MetroScheduleDAO;
 import com.xworkz.metro.dao.MetroScheduleDAOImpl;
 import com.xworkz.metro.dto.MetroScheduleDTO;
+import com.xworkz.metro.excepetion.InvalidDataException;
 import com.xworkz.metro.service.MetroScheduleServiceImpl;
 
 public class MetroBoot {
@@ -24,7 +25,7 @@ public class MetroBoot {
 		//MetroScheduleDTO dto1 = new MetroScheduleDTO(0, "Yeshvanthpur", 2, 608765,LocalDateTime.of(2022, 8, 6, 9, 50, 00), "Appu", "Sandalshop", 17d, 3);
 		//MetroScheduleDTO dto = new MetroScheduleDTO(0, "Jalahalli", 4, 690235, LocalDateTime.of(2022, 8, 6, 9, 50, 30),"Kiran", "Mahalaxmi", 10d, 5);
 		//MetroScheduleDTO dto = new MetroScheduleDTO(0, "mahalaxmi", 4, 690235, LocalDateTime.of(2022, 8, 6, 9, 55, 30),"Ramesh", "Rajajinagar", 10d, 5);
-       //  MetroScheduleDTO dto = new MetroScheduleDTO(0, "Rajajinaga", 4, 690235, LocalDateTime.of(2022, 8, 6, 9, 59, 30),"Satya", "Kuvempu Road", 10d, 5);
+       // MetroScheduleDTO dto = new MetroScheduleDTO(0, "Rajajinaga", 4, 690235, LocalDateTime.of(2022, 8, 6, 9, 59, 30),"Satya", "Kuvempu Road", 10d, 5);
 		//MetroScheduleDTO dto = new MetroScheduleDTO(0, "Kuvempu Road", 4, 690235, LocalDateTime.of(2022, 8, 6, 10, 5, 30),"Akshta", "Srirampura", 10d, 5);
 		//MetroScheduleDTO dto = new MetroScheduleDTO(0, "Srirampura", 4, 690235, LocalDateTime.of(2022, 8, 6, 10, 9, 30),"Sonali", "Sampige Road", 10d, 5);
 		//MetroScheduleDTO dto = new MetroScheduleDTO(0, "Sampige Road", 4, 690235, LocalDateTime.of(2022, 8, 6, 10, 15, 30),"Akshay", "Chikpete", 10d, 3);
@@ -44,11 +45,13 @@ public class MetroBoot {
 		//MetroScheduleDTO dto = new MetroScheduleDTO(0, "VijayNagar", 2, 690247, LocalDateTime.of(2022, 8, 6, 9, 35, 30),"Pragati", "Hosahalli", 10d, 5);
 		MetroScheduleDTO dto = new MetroScheduleDTO(0, "Hosahalli", 2, 690247, LocalDateTime.of(2022, 8, 6, 9, 40, 30),"Varsha", "KSRP", 10d, 5);
 
-		
-		System.out.println(dto);
-		service.validateAndSave(dto);
-		
-		// dao.save(dto);
+     
 
+       try {
+			boolean save = service.validateAndSave(dto);
+			System.out.println(save);
+		} catch (InvalidDataException e) {
+			e.printStackTrace();
+		}
 	}
 }
