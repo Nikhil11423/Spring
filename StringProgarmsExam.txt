@@ -1,0 +1,146 @@
+
+1.Write a Progaram to find the dupalicate char in a String.
+
+package com.xworkz.exam;
+
+public class Exam {
+
+	public static void main(String[] args) {    
+     
+		String str= "i love belagavi";
+		int count;
+		str =str.toLowerCase();
+		String n[]=str.split("");
+		System.out.println("duplicate words are");
+		 for(int i = 0; i < n.length; i++) {    
+	            count = 1;    
+	            for(int j = i+1; j < n.length; j++) {    
+	                if(n[i].equals(n[j])) {    
+	                    count++;    
+	                    n[j] = "0";    
+	                }    
+	            }    
+	            if(count > 1 && n[i] != "0")    
+	                System.out.println(n[i]);    
+	        }
+	
+	}
+}
+
+2.How to reverse a String without reverse() method.
+public class Reverse {
+
+	/*public static void main(String[] args) { 
+		 String str;
+	 Scanner scanner = new Scanner(System.in);
+     System.out.println("Enter a string: "); 
+     str=scanner.nextLine();
+     
+     System.out.println("After reveser");
+     for(int i=scanner.length();i>0;i--) {
+    	 System.out.println(scanner.charAt(i-1));
+     }
+     
+     }
+     
+		
+}
+3.Write the program to count the digits in a number.
+
+public class count{
+public static void main(String[] args) {
+	int count=0 ,num=1234562478;
+	while(num !=0) {
+		num/=10;
+		++count;
+	}
+	System.out.println("No of digits:" +count);
+		
+	}
+}
+}
+4.Write a program to find the 3rd highest no of an integer.
+
+public class highest{
+     public static int getThirdLargest(int[] a, int total){  
+		int nik;  
+		for (int i = 0; i < total; i++)   
+		        {  
+		            for (int j = i + 1; j < total; j++)   
+		            {  
+		                if (a[i] > a[j])   
+		                {  
+		                    nik = a[i];  
+		                    a[i] = a[j];  
+		                    a[j] = nik;  
+		                }  
+		            }  
+		        }  
+		       return a[total-3];  
+		}  
+		public static void main(String args[]){  
+		int a[]={1,2,5,6,3,2};  
+		int b[]={12,24,34,32,33,22,55};  
+		System.out.println("Third Largest: "+getThirdLargest(a,6));  
+		System.out.println("Third Largest: "+getThirdLargest(b,7));  
+		}
+}
+5.Write a program to find a prime number.
+publi cclass prime{
+
+public static voiud main(String[] args){
+int m =25;
+boolean flag=flase;
+for(i=0;i<=num/2;i++)
+{
+if(num% i==0){
+flag=true;
+break;
+}
+}
+if(!flag){
+System.out.println("Given no is prime number");
+else
+System.out.println("Given no is not prime number");
+}
+
+6.Write a progarm to print the following output
+public class triangle{
+
+	int i, j, k, n;
+	Scanner scanner = new Scanner(System.in);  
+	System.out.println("Enter the number of rows you want to print: ");  
+	int rows = scanner.nextInt();      
+	for (i=1; i<= rows ; i++)   
+	{  
+	for (j = rows; j > i ; j--)   
+	{  
+	System.out.print(" ");  
+	}  
+	System.out.print("*");  
+	for (k = 1; k < 2*(i -1) ;k++)   
+	{   
+	System.out.print(" ");   
+	}  
+	if( i==1)   
+	{   
+	System.out.println("");  
+	}  
+	else  
+	{  
+	System.out.println("*");   
+	}  
+	}   
+	for (i=rows-1; i>= 1 ; i--)  
+	{   
+	System.out.print(" ");  
+	}  
+	System.out.print("*");    
+	  
+	System.out.print(" ");   
+	if(i==1)  
+	System.out.println("");  
+	else  
+	System.out.println("*");  
+	}  
+7.
