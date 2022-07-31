@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<meta charset="ISO-8859-1">
+<title>SignUp Page</title>
+<style>
+label{
+font-weight:bold;
+color: blue;
+}
+input[type=text], input[type=password] { 
+     
+        margin: 8px 0;
+        padding: 3px 5px; 
+        display: inline-block; 
+        border: 2px solid green; 
+        box-sizing: border-box;
+        border-radius: 25px; 
+    }
+.required:after {
+	    content:" *";
+	    color: red;
+	  }
+	  
+body{
+margin: 0;
+padding: 0;
+font-family: montserrat;
+background-image : url("wallpaperflare.com_wallpaper.jpg");
+height: 100vh;
+}
+
+.center{
+position:absolute;
+top: 50%;
+left: 50%;
+transform : translate(-50%, -50%);
+width: 400px;
+background: white;
+border-radius: 10px; 
+    opacity: 61%;
+}
+.center h1{
+text-align: center;
+padding: 0 0 20px 0;
+border-bottom: 1px solid silver;
+}
+.center form{
+ padding: 0 40px;
+ box-sizing: border-box;
+ text-align: center;
+}
+input[type="date"]{
+ margin: 8px 0;
+ padding: 3px 5px; 
+ display: inline-block;
+ width: 50%;
+ height: 20px;
+ border: 2px solid green;
+ box-sizing: border-box;
+border-radius: 25px;
+       
+        
+         
+}
+input[type="submit"]{
+
+width: 50%;
+height: 20px;
+border: 1px solid;
+background: #2691d9;
+border-radius: 25px;
+color: #e9f4fb;
+cursor: pointer;
+}
+
+</style>
+<body>
+<div class="center">
+<h1 style="color: red;">Register Out Patient</h1>
+<form action="register" method="post" >
+<a href="HospitalServlet"></a>
+<pre>
+<label class="required" for="firstName">First Name:</label>
+<input type="text" id="firstName"   name="firstName" required>
+<label class="required" for="lastName">Enter LastName</label>
+<input type="text" id="lastName" name="lastName" required>
+<label class="required" for="Email">Enter Email</label>
+<input type="text" id="email" name="email" required>
+<label>Enter Age</label>
+<input type="text"  name="age" >
+<label>Select Date</label>
+<input type="date"  name="current date" >
+<label >Enter Number</label>
+<input type="text" name="mobile" >
+<label class="required" for="password">Enter Password</label>
+<input type="password" name="password" required>
+<label class="required" for="confirm password">Enter ConfirmPassword</label>
+<input type="password" name="confirm password" required>
+<input type="submit"  value="Register">
+</div>
+</pre>
+</form>
+
+</body>
+</html>
+
+
+
+
