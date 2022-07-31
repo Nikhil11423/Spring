@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+label{
+font-weight:bold;
+color: Blue;
+}
+
+body{
+margin: 0;
+padding: 0;
+font-family: montserrat;
+background-image: url("OTT-CMS.jpeg");
+}
+.center{
+position:absolute;
+top: 50%;
+left: 50%;
+transform : translate(-50%, -50%);
+width: 400px;
+background: white;
+border-radius: 10px; 
+    opacity: 61%;
+}
+.center form{
+ padding: 0 40px;
+ box-sizing: border-box;
+ text-align: center;
+}
+</style>
+
+</head>
+<body>
+<div class="center">
+<form action="Save.do" method="post">
+<pre>
+<br>
+<label>OTT Name</label>
+<input type="text" name="name">
+
+<label>Region</label>
+<select id="reg" name="region">
+<option value=select>select</option>
+<option value="India">India</option>
+<option value="India">Pakistan</option>
+<option value="India">England</option>
+<option value="India">USA</option>
+<option value="India">RSA</option>
+<option value="India">Jarman</option>
+<option value="India">South Africa</option>
+</select>
+
+<label>Language</label>
+<select id="lang" name="language">
+<option value=select>select</option>
+<option value="Kannada">Kannada</option>
+<option value="Kannada">Telugu</option>
+<option value="Kannada">Engalish</option>
+<option value="Kannada">Engalish</option>
+<option value="Kannada">Engalish</option>
+<option value="Kannada">Jarman</option>
+<option value="Kannada">Engalish</option>
+
+</select>
+
+<label>Pack Validity</label>
+<select id="pack" name="pack">
+<option value="60 Days">60 Days</option>
+<option value="90 Days">90 Days</option>
+<option value="180">180 Days</option>
+</select>
+
+<label>Number Of Users</label>
+<input type="number" name="user">
+
+<label>Since From</label>
+<input type="number" name="since">
+
+<label>Active Status</label>
+<input type="checkbox" name="status">
+
+<input type="submit" value="Call"" name="call">
+
+</pre>
+</form>
+</div>
+</body>
+</html>
