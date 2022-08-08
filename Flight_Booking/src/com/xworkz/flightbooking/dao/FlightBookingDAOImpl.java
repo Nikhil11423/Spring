@@ -8,11 +8,10 @@ import java.util.Calendar;
 
 import org.springframework.stereotype.Component;
 
+import com.xworkz.flightbooking.constants.JdbcProperties;
 import com.xworkz.flightbooking.dto.FlightBookingDTO;
-import com.xwrokz.flightbooking.constatns.JdbcProperties;
 
-import lombok.Getter;
-import lombok.Setter;
+
 @Component
 public class FlightBookingDAOImpl implements FlightBookingDAO {
 

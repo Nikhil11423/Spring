@@ -1,4 +1,4 @@
-package com.xwrokz.flightbooking.constatns;
+package com.xworkz.flightbooking.constants;
 
 public enum JdbcProperties {
 

@@ -21,7 +21,7 @@ public class ControllerContent {
 	
 
 	@PostMapping("/Save.do")
-	public String doDisplay(OttDTO dto) {
+	public String onDisplay(OttDTO dto) {
 		boolean save= ottservice.validateAndSave(dto);
 		System.out.println(save);
 		return "index.html";

@@ -29,7 +29,7 @@ public class FlightBookingDAOImpl implements FlightBookingDAO {
 			prepare.setString(6, flightBookingDTO.getBoarding());
 			prepare.setString(7, flightBookingDTO.getDestnation());
 			prepare.setDouble(8, flightBookingDTO.getTicketPrice());
-			prepare.setTimestamp(9, flightBookingDTO.getTravelDateAndTime());
+			//prepare.setTimestamp(9, flightBookingDTO.getTravelDateAndTime());
 			prepare.setDouble(10, flightBookingDTO.getGstPercentage());
 			prepare.setDouble(11, flightBookingDTO.getTotalPrice());
 

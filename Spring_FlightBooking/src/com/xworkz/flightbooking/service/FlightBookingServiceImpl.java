@@ -28,5 +28,6 @@ public class FlightBookingServiceImpl implements FlightBookingService {
 		System.out.println("Running service for booking");
 		return false;
 	}
-
+		return this.flightBookingDAO.save(bookingDTO); 
+	}
 }
