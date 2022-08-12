@@ -1,5 +1,8 @@
 package com.xworkz.traffic_info;
 
+import javax.naming.Name;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -23,9 +26,11 @@ public class SpringConfiguration {
 	@Bean
 	public ViewResolver viewResolver() {	
 		System.out.println("Creating the View Resolver");
-		 ViewResolver viewResolver=
-		new InternalResourceViewResolver();
-		return viewResolver;
+		InternalResourceViewResolver resolver= new InternalResourceViewResolver();
+		resolver.setPrefix("/");
+		resolver.setSuffix(".jsp");
+		return resolver;
+	
 	}
 		
 	
